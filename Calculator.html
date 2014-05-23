@@ -4,6 +4,10 @@
         <title> Calculator</title>
         <link rel='stylesheet' href="Calculator.css" type="text/css">
     </head>
+	<script type="text/javascript"
+		  src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'>
+		</script>
+		<script type='text/javascript' src='Calculator.js'></script>
     <body>
         <div id='calculatorBody'>
            <div id='displaySection'>
@@ -16,25 +20,26 @@
             <input type="button" id="close" name="close" value="X">
         </div>
         <div id='buttonRow2' class="buttonRow">
-            <input type="button" id="num7" name="num7" onclick="calculatorApp.clickDigit(7);" value="7" class="numberButton">
-            <input type="button" id="num8" name="num8" onclick="calculatorApp.clickDigit(8);" value="8" class="numberButton">
-            <input type="button" id="num9" name="num9" onclick="calculatorApp.clickDigit(9);" value="9" class="numberButton">
-            <input type="button" id="opMutli" name="opMulti" onclick="calculatorApp.clickOperator(7);" value="*" class="numberButton">
+            <input type="button" id="num7" name="num7" value="7" class="numberButton">
+            <input type="button" id="num8" name="num8" value="8" class="numberButton">
+            <input type="button" id="num9" name="num9" value="9" class="numberButton">
+            <input type="button" id="opMutli" name="opMulti" value="*" class="numberButton">
         </div>
         <div id='buttonRow3' class="buttonRow">
-            <input type="button" id="num4" name="num4" onclick="calculatorApp.clickDigit(4);" value="4" class="numberButton">
-            <input type="button" id="num5" name="num5" onclick="calculatorApp.clickDigit(5);" value="5" class="numberButton">
-            <input type="button" id="num6" name="num6" onclick="calculatorApp.clickDigit(6);" value="6" class="numberButton">
+            <input type="button" id="num4" name="num4" value="4" class="numberButton">
+					
+            <input type="button" id="num5" name="num5" value="5" class="numberButton">
+            <input type="button" id="num6" name="num6" value="6" class="numberButton">
             <input type="button" id="opDiv" name="opDiv" value="/" class="numberButton">
         </div>
         <div id='buttonRow4' class="buttonRow">
-            <input type="button" id="num1" name="num1" onclick="calculatorApp.clickDigit(1);" value="1" class="numberButton">
-            <input type="button" id="num2" name="num2" onclick="calculatorApp.clickDigit(2);" value="2" class="numberButton">
-            <input type="button" id="num3" name="num3" onclick="calculatorApp.clickDigit(3);" value="3" class="numberButton">
-            <input type="button" id="opPlus" name="opPlus" onclick="calculatorApp.clickDigit(7);" value="+" class="numberButton">
+            <input type="button" id="num1" name="num1" value="1" class="numberButton">
+            <input type="button" id="num2" name="num2" value="2" class="numberButton">
+            <input type="button" id="num3" name="num3"  value="3" class="numberButton">
+            <input type="button" id="opPlus" name="opPlus" value="+" class="numberButton">
         </div>
         <div id='buttonRow5' class="buttonRow">
-            <input type="button" id="num0" name="num0" onclick="calculatorApp.clickDigit(7);" value="0" class="numberButton">
+            <input type="button" id="num0" name="num0" value="0" class="numberButton">
             <input type="button" id="decimal" name="decimal" value="." class="numberButton">
             <input type="button" id="eqsign" name="eqsign" value="=" class="numberButton">
             <input type="button" id="opMin" name="opMin" value="-" class="numberButton">
