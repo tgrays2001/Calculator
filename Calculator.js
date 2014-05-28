@@ -1,22 +1,30 @@
 $(document).ready(function(){
 		var calculatorInput = $("#calculatorInput");
+	   var arr = new Array();
+			var nextOp;
+				var stack;
+	
+	$( ".oppButton" ).click(function() {
+    	nextOp = $(this).val(); 
+				console.log("1st");
+	});
 	
 		$( ".numberButton" ).click(function() {
-    	var stack = $(this).val();
+    	stack = $(this).val();
 				calculatorInput.val(stack);
-					$( ".oppButton" ).click(function() {
-    	     var nextOp = $(this).val();
-			 var arr = new Array();
-				arr.push(stack);
+					arr.push(stack);
+		});
 			 if (calculatorInput.val()) {
         	arr.push(parseInt(calculatorInput.val()));
         	calculatorInput.val(" ");
 				 if (nextOp && (arr.length >= 2)) {
+					 console.log("here");
         	var rhs = arr.pop();
         	var lhs = arr.pop();
         	switch (nextOp) {
             	case '+':
                 	arr.push(lhs + rhs);
+							    console.log(arr);
                 	break;
             	case '-':
                 	arr.push(lhs - rhs);
@@ -30,9 +38,9 @@ $(document).ready(function(){
 							case '+':
                 	arr.push(lhs + rhs);
                 	break;
-            	case '=':
-                	arr.push(lhs - rhs);
-                	break;
+							case '=':
+									arr.pop();
+									break;
 							
         }
         nextOp = '';
@@ -40,11 +48,15 @@ $(document).ready(function(){
     calculatorInput.val(arr[arr.length - 1]);
 		};
 						$(".clearButton").click(function(){
-							stack.val("");
-							nextOp.val("");
+							stack.val(" ");
+							nextOp.val(" ");
 		          calculatorInput.val(" ");
 });
-			  
+});
+$(".equalButton").click(function() {
+	calculatorInput.val(arr);
+});
+				
 			
 			//I need to create a variable and a function that assign the values inputted to the variable. 
 			//once 2 numberButtons are pushed and an operator button is pushed the value is calculated and stored
@@ -56,19 +68,3 @@ $(document).ready(function(){
 			//pass in variable to calculatorInput
 			//put display variable like I had in first function
 			//get the calc to calc 2 numbers at a time, and display it
-			//
-			
-});
-});
-});
-
-
-
-
-
-
-
-
-$(".clearButton").click(function(){
-		$("#calculatorInput").val(" ");
-});
