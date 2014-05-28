@@ -1,11 +1,49 @@
 $(document).ready(function(){
+		var calculatorInput = $("#calculatorInput");
+	
 		$( ".numberButton" ).click(function() {
     	var stack = $(this).val();
-			 $("#calculatorInput").val(stack);
-			 if (calculatorInput.value) {
-        	stack.push(parseInt(calculatorInput.value));
-        	calculatorInput.value = '';
-				};
+				calculatorInput.val(stack);
+					$( ".oppButton" ).click(function() {
+    	     var nextOp = $(this).val();
+			 var arr = new Array();
+				arr.push(stack);
+			 if (calculatorInput.val()) {
+        	arr.push(parseInt(calculatorInput.val()));
+        	calculatorInput.val(" ");
+				 if (nextOp && (arr.length >= 2)) {
+        	var rhs = arr.pop();
+        	var lhs = arr.pop();
+        	switch (nextOp) {
+            	case '+':
+                	arr.push(lhs + rhs);
+                	break;
+            	case '-':
+                	arr.push(lhs - rhs);
+                	break;
+							case '/':
+                	arr.push(lhs / rhs);
+                	break;
+            	case '*':
+                	arr.push(lhs * rhs);
+                	break;
+							case '+':
+                	arr.push(lhs + rhs);
+                	break;
+            	case '=':
+                	arr.push(lhs - rhs);
+                	break;
+							
+        }
+        nextOp = '';
+    }
+    calculatorInput.val(arr[arr.length - 1]);
+		};
+						$(".clearButton").click(function(){
+							stack.val("");
+							nextOp.val("");
+		          calculatorInput.val(" ");
+});
 			  
 			
 			//I need to create a variable and a function that assign the values inputted to the variable. 
@@ -22,11 +60,14 @@ $(document).ready(function(){
 			
 });
 });
+});
 
 
 
 
-var nextOp;
+
+
+
 
 $(".clearButton").click(function(){
 		$("#calculatorInput").val(" ");
