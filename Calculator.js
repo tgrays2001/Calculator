@@ -1,4 +1,4 @@
-//This is the start of making this calculator function//
+//Declaring document variables//
 $(document).ready(function () {
     var calculatorInput = $("#calculatorInput");
     var arr = new Array();
@@ -61,9 +61,12 @@ $(document).ready(function () {
         };
 			//Created the function that will operate the clear buttons//
         $(".clearButton").click(function () {
-            stack.val(" ");
-            nextOp.val(" ");
-            calculatorInput.val(" ");
+            stack = '';
+            nextOp = '';
+						arr = [];
+            calculatorInput.val('');
+						//calculatorInput = $("#calculatorInput");//
+					  console.log(arr,"clear")
         });
     });
 });
